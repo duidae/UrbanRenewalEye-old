@@ -1,0 +1,6 @@
+.vscode/
+typings/
+dist/
+node_modules/
+*.swp
+*.ses

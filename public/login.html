@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/login" method="post">
+            <div class="row col-md-offset-4 col-md-4 well">
+                <div class="form-group">
+                    <label for="inputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail1" name="username" placeholder="Email"></input>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword1">Password</label>
+                    <input type="password" class="form-control" id="inputPassword1" name="password" placeholder="Password" />
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-info">Login</button>
+                </div>
+            </div>
+            <div class="row col-md-offset-4 col-md-4 well text-center">
+                <button type="submit" class="btn btn-danger" formaction="/auth/google">Google</button>
+                <button type="submit" class="btn btn-primary" formaction="/auth/facebook">Facebook</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
