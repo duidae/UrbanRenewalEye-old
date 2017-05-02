@@ -9,7 +9,7 @@
     "hotbuild": "npm run build -- --watch",
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build --watch",
     "start": "cross-env DEBUG=server,route,auth,ws DEBUG_COLORS=1 node server.js",
-    "postinstall": "rm -rf dist && npm run build"
+    "postinstall": "npm run build"
   },
   "author": "pentatonic",
   "license": "ISC",
