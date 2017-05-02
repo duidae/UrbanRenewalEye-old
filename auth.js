@@ -70,7 +70,7 @@ let google_strategy = new GoogleStrategy(
     {
         clientID: '705188546883-3f7bt5f8f61ffohd2cfsf2hgjldpov7l.apps.googleusercontent.com',
         clientSecret: 'dGy9EUcjJACji2PERx_CiuTb',
-        callbackURL: (process.env.NODE_ENV === 'production') ? 'https://chat-chat-react.herokuapp.com/auth/google/callback' : 'https://127.0.0.1:8080/auth/google/callback',
+        callbackURL: (process.env.NODE_ENV === 'production') ? 'https://urban-renewal.herokuapp.com/auth/google/callback' : 'https://127.0.0.1:8080/auth/google/callback',
     },
     function (accessToken, refreshToken, profile, done) {
         // User.findOrCreate({ googleId: profile.id }, function (err, user) {
