@@ -2,8 +2,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: `${__dirname}/public/index.html`,
-    filename: 'index.html',
+    template: `${__dirname}/template/map.html`,
+    filename: 'map.html',
     inject: 'body',
 });
 
@@ -14,7 +14,7 @@ module.exports = {
     },
     // output 是放入產生出來的結果的相關參數
     output: {
-        path: `${__dirname}/dist`,
+        path: `${__dirname}/public`,
         filename: '[name].bundle.js',
     },
     module: {

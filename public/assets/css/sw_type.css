@@ -1,0 +1,36 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+ul{ margin:0; padding:0; list-style-type:none;} 
+ul#navlist{
+	font:1.5em verdana;padding-bottom: 1.5em;font-weight: 500; 
+	margin-top: 0em;
+	font-family: "微軟正黑體",'Noto Sans TC','Montserrat', "Helvetica", Arial, sans-serif;
+	}
+ul#navlist li span{ background: #FDFEFE; padding: 0.5em 1.2em; border-style: solid; border-width: 2px; border-color: #17202A; }
+ul#navlist li{float: left; height: 3em; border: 0px solid #6c6; width: 100%; }
+ul#navlist .list1{border-bottom: 2px solid #17202A;width: 100%;margin-bottom: -0.7em;}
+#navlist a{display: block;color: #666;text-decoration: none;padding: 6px 5px;width: 100%;text-align: center;}
+
+ul#navlistright{
+	font:0.5em verdana;padding-bottom: 3em;font-weight: 500;
+	margin-top: 0em;padding-top: 1em;
+     font-family: "微軟正黑體",'Noto Sans TC','Montserrat', "Helvetica", Arial, sans-serif;
+     }
+ul#navlistright li span{ background: #FDFEFE; padding: 0.5em 1.2em; border-style: solid; border-width: 2px; border-color: #17202A;}
+ul#navlistright li{float: left; height: 1.2em; border: 0px solid #6c6; width: 100%; }
+ul#navlistright .list1{border-bottom: 2px solid #17202A;width: 100%;margin-bottom: -0.7em;}
+
+
+@media (max-width: 375px){
+ul{ margin:0; padding:0; list-style-type:none;} 
+ul#navlist{font:1.4em verdana;padding-bottom: 1.5em;
+	       font-weight: 500; margin-top: 0em;
+	       font-family: "微軟正黑體",'Noto Sans TC','Montserrat', "Helvetica", Arial, sans-serif;
+	   }
+ul#navlist li span{ background: #FDFEFE; padding: 0.5em 0.5em; border-style: solid; border-width: 2px; border-color: #17202A; }
+ul#navlist li{float: left; height: 3em; border: 0px solid #6c6; width: 100%; }
+ul#navlist .list1{border-bottom: 2px solid #17202A;width: 100%;margin-bottom: -0.7em;}
+#navlist a{display: block;color: #666;text-decoration: none;padding: 6px 5px;width: 100%;text-align: center;}
+
+}

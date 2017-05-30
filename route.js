@@ -60,7 +60,7 @@ module.exports = (app, session) => {
     });
 
     app.get('/', (req, res, next) => {
-        res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+        res.sendFile(path.resolve(__dirname, 'public/index.html'));
     });
     app.use(express.static(`${__dirname}/dist`));
     app.use(express.static(`${__dirname}/public`));
