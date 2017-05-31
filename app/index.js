@@ -6,7 +6,7 @@ import ChatMap from './ChatMap';
 
 ReactDOM.render(
     <div >
-        <ChatDialog />
+        {/*<ChatDialog />*/}
         <ChatMap />
     </div>,
     document.getElementById('root'));

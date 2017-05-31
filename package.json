@@ -11,7 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
     "hotbuild": "npm run build -- --watch",
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build --watch",
-    "start": "cross-env DEBUG=server,route,auth,ws DEBUG_COLORS=1 node server.js",
+    "start": "cross-env DEBUG=server,route,auth,ws DEBUG_COLORS=1 AUTHENTICATION=false node server.js",
     "postinstall": "npm run build"
   },
   "author": "pentatonic, duidae",
