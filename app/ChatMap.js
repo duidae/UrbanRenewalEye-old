@@ -2,6 +2,8 @@ import canUseDOM from "can-use-dom";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DataManager from './DataManager';
+import { ModalContainer, ModalDialog } from 'react-modal-dialog';
+
 import {
     withGoogleMap,
     GoogleMap,
@@ -67,16 +69,25 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                         key={'poly' + i}
                     />
                     {polygon.position != null && (
-                        <InfoWindow
-                            position={polygon.position}
-                            onCloseClick={onCloseClick}
-                            key={'polyInfo' + i}
-                        >
-                            <div>
-                                區域座標: <br />
-                                {JSON.stringify(polygon.paths)}
-                            </div>
-                        </InfoWindow>
+                        <div>
+
+                            <InfoWindow
+                                position={polygon.position}
+                                onCloseClick={onCloseClick}
+                                key={'polyInfo' + i}
+                            >
+                                <div>
+                                    區域座標: <br />
+                                    {JSON.stringify(polygon.paths)}
+                                </div>
+                            </InfoWindow>
+                            <ModalContainer onClose={onCloseClick}>
+                                <ModalDialog onClose={onCloseClick}>
+                                    <h1>詳細資料</h1>
+                                    <p style={{width: '500px'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </ModalDialog>
+                            </ModalContainer>
+                        </div>
                     )}
                 </div>
             );
