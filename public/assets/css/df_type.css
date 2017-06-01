@@ -339,7 +339,7 @@ input.ct-red + span + label + span.switch-right {
   .navbar .navbar-nav > li > a.btn.btn-simple.active, .open >
   .navbar .navbar-nav > li > a.btn.btn-simple.dropdown-toggle {
     background-color: transparent;
-    color: #ffffff; }
+    color: #AAAAAA; }
   .btn.btn-simple .caret,
   .navbar .navbar-nav > li > a.btn.btn-simple .caret {
     border-top-color: #FFFFFF; }
