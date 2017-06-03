@@ -57,9 +57,6 @@ class DataManager {
     }
 
     sendMessage(msg) {
-        if (this.username == '') {
-            this.newUser('Meow');
-        }
         this.socket.emit('send-message', msg);
     }
 

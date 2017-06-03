@@ -51,7 +51,7 @@ class OnlineUsers extends React.Component {
     render() {
         return (
             <div>
-                <div className="panel panel-default">
+                <div className="panel panel-success">
                     <div className="panel-heading">{this.props.title}</div>
                     <div className="panel-body">
                         {this.state.userList.join(', ')}
@@ -112,7 +112,7 @@ class ChatForm extends React.Component {
         return (
             <div>
                 <div className="panel panel-success">
-                    <div className="panel-heading">Room</div>
+                    <div className="panel-heading">{this.props.title}</div>
                     {/*<div className="panel-body bg-danger text-danger" >Connection lost...</div>*/}
                     <div className="panel-body pre-scrollable" style={{ height: '300px' }} id='divDialogBox'>
                         {this.state.messages.map((message, i) => {
@@ -121,10 +121,10 @@ class ChatForm extends React.Component {
                     </div>
                 </div>
                 <div className='form-group'>
-                    <label>{this.props.title}</label>
+                    <label>{this.props.msgTitle}</label>
                     <textarea className='form-control' onChange={this.handleTextChange} value={this.state.text} ref={(area) => { this.inputText = area; }} onKeyPress={this.handleKeyPress}></textarea>
                 </div>
-                <button type="submit" className='btn btn-primary' onClick={this.handleSend}>Send</button>
+                <button type="submit" className='btn btn-primary' onClick={this.handleSend}>說吧！</button>
             </div>
         );
     }
@@ -188,14 +188,16 @@ class ChatDialog extends React.Component {
         this.username = '';
     }
     componentWillMount() {
+        let animal = require('./animal.js')
         dataMgr.connect();
+        dataMgr.newUser(animal());
         this.username = dataMgr.getUsername();
     }
     render() {
         return (
-            <div className='' style={{backgroundColor: 'rgba(96, 125, 139, 0.40)'}}>
-                <OnlineUsers title='Online User'></OnlineUsers>
-                <ChatForm title='Enter Message'></ChatForm>
+            <div className='' style={{backgroundColor: '#EEEEEE'}}>
+                <OnlineUsers title='線上居民'></OnlineUsers>
+                <ChatForm title='聊天室 - 更新單元（...）' msgTitle='我想說的話：'></ChatForm>
             </div>
         );
     }

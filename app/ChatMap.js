@@ -74,7 +74,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                             key={'polyInfo' + i}
                         >
                             <div>
-                                <h3>Land Name</h3>
+                                <h3>單元名稱</h3>
                                 <div className="btn-toolbar">
                                     <button className='btn btn-primary' onClick={() => props.onChatClick(polygon)}>聊聊</button>
                                     <button className='btn btn-primary' onClick={() => props.onLandDetailClick(polygon)}>詳細</button>
@@ -92,7 +92,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             <ModalContainer onClose={() => props.onLandDetailCloseClick()}>
                 <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '800px' }}>
                     <h2>詳細資料</h2>
-                    <p style={{ width: '500px', height: '500px' }}>
+                    <p className="panel-body pre-scrollable" style={{ width: '500px', height: '600px' }}>
                         區域座標: <br />
                         {JSON.stringify(props.popupDetail, null, 2)}
                     </p>
@@ -102,7 +102,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
 
         {props.popupChat != null && (
             <ModalContainer onClose={() => props.onChatCloseClick()}>
-                <ModalDialog onClose={() => props.onChatCloseClick()} style={{ width: '800px' }}>
+                <ModalDialog onClose={() => props.onChatCloseClick()} style={{ width: '800px', backgroundColor: '#EEEEEE' }}>
                     <ChatDialog></ChatDialog>
                 </ModalDialog>
             </ModalContainer>
