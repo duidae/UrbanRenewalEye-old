@@ -113,7 +113,7 @@ class ChatForm extends React.Component {
             <div>
                 <div className="panel panel-success">
                     <div className="panel-heading">Room</div>
-                    <div className="panel-body bg-danger text-danger" >Connection lost...</div>
+                    {/*<div className="panel-body bg-danger text-danger" >Connection lost...</div>*/}
                     <div className="panel-body pre-scrollable" style={{ height: '300px' }} id='divDialogBox'>
                         {this.state.messages.map((message, i) => {
                             return <div className='well well-sm' key={i}>{message}</div>;
@@ -193,7 +193,7 @@ class ChatDialog extends React.Component {
     }
     render() {
         return (
-            <div className='col-md-offset-1 col-md-4 well well-sm' style={{backgroundColor: 'rgba(96, 125, 139, 0.40)'}}>
+            <div className='' style={{backgroundColor: 'rgba(96, 125, 139, 0.40)'}}>
                 <OnlineUsers title='Online User'></OnlineUsers>
                 <ChatForm title='Enter Message'></ChatForm>
             </div>
