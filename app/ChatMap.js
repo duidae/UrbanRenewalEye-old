@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import DataManager from './DataManager';
 import ChatDialog from './ChatDialog';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
-import land_info from './land_info.js';
+import land_info from './renewal_units200.js';
 
 import {
     withGoogleMap,
@@ -49,11 +49,23 @@ const UserLocationGoogleMap = withGoogleMap(props => (
         ))}
 
         {props.polygons.map((polygon, i) => {
+            let coords = [];
+            let geo = polygon.geometry;
+            if (geo && geo.coordinates[0] && geo.coordinates[0][0]) {
+                coords = geo.coordinates[0][0].map((coord) => {
+                    return {
+                        lat: coord[1],
+                        lng: coord[0],
+                    };
+                });
+            }
+            {/*console.log(JSON.stringify(coords));*/}
+
 
             return (
                 <div key={'urban' + i}>
                     <Polygon
-                        paths={polygon.paths}
+                        paths={coords}
                         options={{
                             fillColor: 'red',
                             fillOpacity: 0.20,
@@ -108,7 +120,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             </ModalContainer>
         )}
 
-        <Circle
+        {/*<Circle
             center={{ lat: 24.94, lng: 121.52 }}
             radius={500}
             options={{
@@ -118,7 +130,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 strokeOpacity: 1,
                 strokeWeight: 0.5,
             }}
-        />
+        />*/}
 
     </GoogleMap>
 ));
@@ -150,7 +162,7 @@ export default class ChatMap extends React.Component {
             ],
             infos: [],
             center: { lat: 24.985854476804, lng: 121.55429918361 },
-            polygons: land_info,
+            polygons: land_info.features,
             popupDetail: null,
             popupChat: null
         };
@@ -281,7 +293,7 @@ export default class ChatMap extends React.Component {
 
     handleLandDetailClick(targetPolygon) {
         this.setState({
-            popupDetail: targetPolygon.paths
+            popupDetail: targetPolygon.properties
         });
     }
 
