@@ -14,7 +14,7 @@ import {
     Polygon,
     SeartchBox,
 } from 'react-google-maps';
-import land_info from './renewal_units400.js';
+import land_info from './renewal_units_geojson.js';
 
 let dataMgr = new DataManager();
 
