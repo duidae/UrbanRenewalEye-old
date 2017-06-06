@@ -12,8 +12,9 @@ import {
     TrafficLayer,
     Circle,
     Polygon,
+    SeartchBox,
 } from 'react-google-maps';
-import land_info from './renewal_units200.js';
+import land_info from './renewal_units400.js';
 
 let dataMgr = new DataManager();
 
@@ -62,7 +63,7 @@ class Lands extends React.PureComponent {
                     fillOpacity: 0.20,
                     strokeColor: 'red',
                     strokeOpacity: 1,
-                    strokeWeight: 0.5,
+                    strokeWeight: 0.7,
                 }}
                 onClick={this._onClick}
                 key={'poly' + this.props.index}
@@ -75,7 +76,7 @@ class Lands extends React.PureComponent {
 const UserLocationGoogleMap = withGoogleMap(props => (
     <GoogleMap
         ref={props.onMapLoad}
-        defaultZoom={12}
+        defaultZoom={16}
         defaultCenter={{ lat: 0, lng: 0 }}
         center={props.center}
     /*onClick={props.onMapClick}*/
@@ -179,7 +180,7 @@ export default class ChatMap extends React.Component {
                 */
             ],
             infos: [],
-            center: { lat: 24.985854476804, lng: 121.55429918361 },
+            center: { lat: 25.038357847174, lng: 121.54770626982 },
             // polygons: land_info.features,
             popupDetail: null,
             popupChat: false,
@@ -240,7 +241,7 @@ export default class ChatMap extends React.Component {
     handleMapLoad(map) {
         this._mapComponent = map;
         if (map) {
-            console.log(map.getZoom());
+            console.log('zoom:' + map.getZoom());
         }
     }
 
