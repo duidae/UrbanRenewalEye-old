@@ -28,6 +28,7 @@ const geolocation = (
         })
 );
 
+
 const UserLocationGoogleMap = withGoogleMap(props => (
     <GoogleMap
         ref={props.onMapLoad}
@@ -48,7 +49,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             </InfoWindow>
         ))}
 
-        {props.polygons.map((polygon, i) => {
+        {land_info.features.map((polygon, i) => {
             let coords = [];
             let geo = polygon.geometry;
             if (geo && geo.coordinates[0] && geo.coordinates[0][0]) {
@@ -63,42 +64,39 @@ const UserLocationGoogleMap = withGoogleMap(props => (
 
 
             return (
-                <div key={'urban' + i}>
-                    <Polygon
-                        paths={coords}
-                        options={{
-                            fillColor: 'red',
-                            fillOpacity: 0.20,
-                            strokeColor: 'red',
-                            strokeOpacity: 1,
-                            strokeWeight: 0.5,
-                        }}
-                        onClick={(event) => {
-                            console.log(event, polygon);
-                            props.onPolygonClick(event, polygon);
-                        }}
-                        key={'poly' + i}
-                    />
-                    {polygon.position != null && (
-                        <InfoWindow
-                            position={polygon.position}
-                            onCloseClick={() => props.onPolygonCloseClick(polygon)}
-                            key={'polyInfo' + i}
-                        >
-                            <div>
-                                <h3>單元名稱</h3>
-                                <div className="btn-toolbar">
-                                    <button className='btn btn-primary' onClick={() => props.onChatClick(polygon)}>聊聊</button>
-                                    <button className='btn btn-primary' onClick={() => props.onLandDetailClick(polygon)}>詳細</button>
-                                </div>
-                            </div>
-                        </InfoWindow>
-                    )}
-
-
-                </div>
+                <Polygon
+                    paths={coords}
+                    options={{
+                        fillColor: 'red',
+                        fillOpacity: 0.20,
+                        strokeColor: 'red',
+                        strokeOpacity: 1,
+                        strokeWeight: 0.5,
+                    }}
+                    onClick={(event) => {
+                        console.log(event, polygon);
+                        props.onPolygonClick(event, i);
+                    }}
+                    key={'poly' + i}
+                />
             );
         })}
+
+        {props.landInfoWindow.position != null && (
+            <InfoWindow
+                position={props.landInfoWindow.position}
+                onCloseClick={() => props.onPolygonCloseClick()}
+                key={'polyInfo'}
+            >
+                <div>
+                    <h3>單元名稱</h3>
+                    <div className="btn-toolbar">
+                        <button className='btn btn-primary' onClick={() => props.onChatClick()}>聊聊</button>
+                        <button className='btn btn-primary' onClick={() => props.onLandDetailClick(props.landInfoWindow.landIndex)}>詳細</button>
+                    </div>
+                </div>
+            </InfoWindow>
+        )}
 
         {props.popupDetail != null && (
             <ModalContainer onClose={() => props.onLandDetailCloseClick()}>
@@ -112,7 +110,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             </ModalContainer>
         )}
 
-        {props.popupChat != null && (
+        {props.popupChat == true && (
             <ModalContainer onClose={() => props.onChatCloseClick()}>
                 <ModalDialog onClose={() => props.onChatCloseClick()} style={{ width: '800px', backgroundColor: '#EEEEEE' }}>
                     <ChatDialog></ChatDialog>
@@ -162,9 +160,13 @@ export default class ChatMap extends React.Component {
             ],
             infos: [],
             center: { lat: 24.985854476804, lng: 121.55429918361 },
-            polygons: land_info.features,
+            // polygons: land_info.features,
             popupDetail: null,
-            popupChat: null
+            popupChat: false,
+            landInfoWindow: {
+                position: null,
+                landIndex: 0
+            }
         };
 
         this.handleLocationUpdate = this.handleLocationUpdate.bind(this);
@@ -262,38 +264,27 @@ export default class ChatMap extends React.Component {
         });
     }
 
-    handlePolygonClick(event, targetPolygon) {
-        const newPolygons = this.state.polygons.map(polygon => {
-            if (polygon === targetPolygon) {
-                polygon.position = event.latLng;
-                polygon.key = Date.now();
-            }
-            else {
-                polygon.position = null;
-            }
-            return polygon;
-        });
-
+    handlePolygonClick(event, i) {
         this.setState({
-            polygons: newPolygons,
+            landInfoWindow: {
+                position: event.latLng,
+                landIndex: i
+            }
         });
     }
 
-    handlePolygonCloseClick(targetPolygon) {
-        const newPolygons = this.state.polygons.map(polygon => {
-            if (polygon === targetPolygon) {
-                polygon.position = null;
-            }
-            return polygon;
-        });
+    handlePolygonCloseClick() {
         this.setState({
-            polygons: newPolygons,
+            landInfoWindow: {
+                position: null,
+                landIndex: 0
+            }
         });
     }
 
     handleLandDetailClick(targetPolygon) {
         this.setState({
-            popupDetail: targetPolygon.properties
+            popupDetail: land_info.features[this.state.landInfoWindow.landIndex].properties
         });
     }
 
@@ -311,7 +302,7 @@ export default class ChatMap extends React.Component {
 
     handleChatCloseClick() {
         this.setState({
-            popupChat: null
+            popupChat: false
         });
     }
 
@@ -333,8 +324,8 @@ export default class ChatMap extends React.Component {
                         }} />
                     }
                     onMapLoad={this.handleMapLoad}
-                    onMapClick={this.handleMapClick}
-                    onMarkerRightClick={this.handleMarkerRightClick}
+                    //onMapClick={this.handleMapClick}
+                    //onMarkerRightClick={this.handleMarkerRightClick}
                     onPolygonClick={this.handlePolygonClick}
                     onPolygonCloseClick={this.handlePolygonCloseClick}
                     onLandDetailClick={this.handleLandDetailClick}
@@ -344,9 +335,10 @@ export default class ChatMap extends React.Component {
                     center={this.state.center}
                     markers={this.state.markers}
                     infos={this.state.infos}
-                    polygons={this.state.polygons}
+                    //polygons={this.state.polygons}
                     popupDetail={this.state.popupDetail}
                     popupChat={this.state.popupChat}
+                    landInfoWindow={this.state.landInfoWindow}
                 />
             </div>
         );
