@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import DataManager from './DataManager';
 import ChatDialog from './ChatDialog';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
-import land_info from './renewal_units200.js';
-
 import {
     withGoogleMap,
     GoogleMap,
@@ -15,6 +13,7 @@ import {
     Circle,
     Polygon,
 } from 'react-google-maps';
+import land_info from './renewal_units200.js';
 
 let dataMgr = new DataManager();
 
@@ -27,6 +26,50 @@ const geolocation = (
             },
         })
 );
+
+let land_coords = land_info.features.map((land, i) => {
+    let coords = [];
+    let geo = land.geometry;
+    if (geo && geo.coordinates[0] && geo.coordinates[0][0]) {
+        coords = geo.coordinates[0][0].map((coord) => {
+            return {
+                lat: coord[1],
+                lng: coord[0],
+            };
+        });
+    }
+    return coords;
+});
+
+class Lands extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this._onClick = this._onClick.bind(this);
+    }
+
+    _onClick(e) {
+        console.log(JSON.stringify(e));
+        this.props.onClick(e, this.props.index);
+    }
+
+    render() {
+        //console.log(this.props.index);
+        return (
+            <Polygon
+                paths={land_coords[this.props.index]}
+                options={{
+                    fillColor: 'red',
+                    fillOpacity: 0.20,
+                    strokeColor: 'red',
+                    strokeOpacity: 1,
+                    strokeWeight: 0.5,
+                }}
+                onClick={this._onClick}
+                key={'poly' + this.props.index}
+            />
+        );
+    }
+}
 
 
 const UserLocationGoogleMap = withGoogleMap(props => (
@@ -49,36 +92,13 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             </InfoWindow>
         ))}
 
-        {land_info.features.map((polygon, i) => {
-            let coords = [];
-            let geo = polygon.geometry;
-            if (geo && geo.coordinates[0] && geo.coordinates[0][0]) {
-                coords = geo.coordinates[0][0].map((coord) => {
-                    return {
-                        lat: coord[1],
-                        lng: coord[0],
-                    };
-                });
-            }
-            {/*console.log(JSON.stringify(coords));*/}
+        {land_info.features.map((land, i) => {
+
+            {/*console.log(JSON.stringify(coords));*/ }
 
 
             return (
-                <Polygon
-                    paths={coords}
-                    options={{
-                        fillColor: 'red',
-                        fillOpacity: 0.20,
-                        strokeColor: 'red',
-                        strokeOpacity: 1,
-                        strokeWeight: 0.5,
-                    }}
-                    onClick={(event) => {
-                        console.log(event, polygon);
-                        props.onPolygonClick(event, i);
-                    }}
-                    key={'poly' + i}
-                />
+                <Lands onClick={props.onPolygonClick} index={i} key={'land' + i}></Lands>
             );
         })}
 
