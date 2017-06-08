@@ -152,15 +152,15 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 <div style={{height: '600px'}}>
 
                 <h3>詳細資料</h3>
-                <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '500px' }}>
+                <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
                     區域座標: <br />
                     {JSON.stringify(props.popupDetail, null, 2)}
                     <ReactDisqusThread
-                        shortname="httpsurban-renewalherokuappcom"
-                        identifier="000"
+                        shortname="urbanrenewal"
+                        identifier="44444"
                         title="Discussion"
-                        url="https://urban-renewal.herokuapp.com/"
-                        category_id="000"
+                        url="https://urban-renewal.herokuapp.com/map.html"
+                        category_id="123"
                         onNewComment={comment => { console.log(comment.text); }} />
                 </p>
                 </div>
