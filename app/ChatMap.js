@@ -12,8 +12,9 @@ import {
     TrafficLayer,
     Circle,
     Polygon,
-    SeartchBox,
 } from 'react-google-maps';
+import SearchBox from '../node_modules/react-google-maps/lib/places/SearchBox';
+import ReactDisqusThread from 'react-disqus-thread';
 import land_info from './renewal_units_geojson.js';
 
 let dataMgr = new DataManager();
@@ -41,6 +42,22 @@ let land_coords = land_info.features.map((land, i) => {
     }
     return coords;
 });
+
+const INPUT_STYLE = {
+    boxSizing: `border-box`,
+    MozBoxSizing: `border-box`,
+    border: `1px solid transparent`,
+    width: `240px`,
+    height: `30px`,
+    marginTop: `9px`,
+    padding: `0 12px`,
+    borderRadius: `1px`,
+    boxShadow: `0 5px 6px rgba(0, 0, 0, 0.5)`,
+    fontSize: `14px`,
+    outline: `none`,
+    textOverflow: `ellipses`,
+    top: `100px`
+};
 
 class Lands extends React.PureComponent {
     constructor(props) {
@@ -81,6 +98,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
         center={props.center}
     /*onClick={props.onMapClick}*/
     >
+
         {props.markers.map(marker => (
             <Marker {...marker}>
                 <div>{marker.content}</div>
@@ -120,15 +138,33 @@ const UserLocationGoogleMap = withGoogleMap(props => (
         )}
 
         {props.popupDetail != null && (
+            /*
             <ModalContainer onClose={() => props.onLandDetailCloseClick()}>
-                <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '800px' }}>
+                <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%' }}>
                     <h2>詳細資料</h2>
                     <p className="panel-body pre-scrollable" style={{ width: '500px', height: '600px' }}>
                         區域座標: <br />
                         {JSON.stringify(props.popupDetail, null, 2)}
                     </p>
                 </ModalDialog>
-            </ModalContainer>
+            </ModalContainer>*/
+            <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
+                <div style={{height: '600px'}}>
+
+                <h3>詳細資料</h3>
+                <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
+                    區域座標: <br />
+                    {JSON.stringify(props.popupDetail, null, 2)}
+                    <ReactDisqusThread
+                        shortname="urbanrenewal"
+                        identifier="44444"
+                        title="Discussion"
+                        url="https://urban-renewal.herokuapp.com/map.html"
+                        category_id="123"
+                        onNewComment={comment => { console.log(comment.text); }} />
+                </p>
+                </div>
+            </ModalDialog>
         )}
 
         {props.popupChat == true && (
@@ -150,7 +186,14 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 strokeWeight: 0.5,
             }}
         />*/}
-
+        <SearchBox
+            ref={props.onSearchBoxMounted}
+            bounds={props.bounds}
+            controlPosition={google.maps.ControlPosition.TOP_LEFT}
+            onPlacesChanged={props.onPlacesChanged}
+            inputPlaceholder="來去看看我家附近?"
+            inputStyle={INPUT_STYLE}
+        />
     </GoogleMap>
 ));
 
@@ -159,6 +202,7 @@ export default class ChatMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            bounds: null,
             markers: [
                 /*
                 {
@@ -201,7 +245,45 @@ export default class ChatMap extends React.Component {
         this.handleLandDetailCloseClick = this.handleLandDetailCloseClick.bind(this);
         this.handleChatClick = this.handleChatClick.bind(this);
         this.handleChatCloseClick = this.handleChatCloseClick.bind(this);
+
+        this.handleMapMounted = this.handleMapMounted.bind(this);
+        this.handleBoundsChanged = this.handleBoundsChanged.bind(this);
+        this.handleSearchBoxMounted = this.handleSearchBoxMounted.bind(this);
+        this.handlePlacesChanged = this.handlePlacesChanged.bind(this);
     }
+
+    handleMapMounted(map) {
+        this._map = map;
+    }
+
+    handleBoundsChanged() {
+        this.setState({
+            bounds: this._map.getBounds(),
+            center: this._map.getCenter(),
+        });
+    }
+
+    handleSearchBoxMounted(searchBox) {
+        this._searchBox = searchBox;
+    }
+
+    handlePlacesChanged() {
+        const places = this._searchBox.getPlaces();
+
+        // Add a marker for each place returned from search bar
+        const markers = places.map(place => ({
+            position: place.geometry.location,
+        }));
+
+        // Set markers; set map center to first search result
+        const mapCenter = markers.length > 0 ? markers[0].position : this.state.center;
+
+        this.setState({
+            center: mapCenter,
+            markers,
+        });
+    }
+
 
     componentDidMount() {
         // Send current position to server
@@ -286,11 +368,19 @@ export default class ChatMap extends React.Component {
     }
 
     handlePolygonClick(event, i) {
+        // this.setState({
+        //     landInfoWindow: {
+        //         position: event.latLng,
+        //         landIndex: i
+        //     }
+        // });
+
+        console.log(JSON.stringify(event.latLng));
         this.setState({
-            landInfoWindow: {
+            markers: [{
                 position: event.latLng,
-                landIndex: i
-            }
+            }],
+            popupDetail: land_info.features[i].properties,
         });
     }
 
@@ -337,7 +427,7 @@ export default class ChatMap extends React.Component {
                     mapElement={
                         <div style={{
                             position: 'absolute',
-                            top: 0,
+                            top: '60px',
                             left: 0,
                             right: 0,
                             bottom: 0,
@@ -360,6 +450,12 @@ export default class ChatMap extends React.Component {
                     popupDetail={this.state.popupDetail}
                     popupChat={this.state.popupChat}
                     landInfoWindow={this.state.landInfoWindow}
+                    onMapMounted={this.handleMapMounted}
+                    onBoundsChanged={this.handleBoundsChanged}
+                    onSearchBoxMounted={this.handleSearchBoxMounted}
+                    bounds={this.state.bounds}
+                    onPlacesChanged={this.handlePlacesChanged}
+                    markers={this.state.markers}
                 />
             </div>
         );
