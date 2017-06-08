@@ -15,7 +15,8 @@ import {
 } from 'react-google-maps';
 import SearchBox from '../node_modules/react-google-maps/lib/places/SearchBox';
 import FacebookProvider, { Comments } from 'react-facebook';
-import land_info from './renewal_units_geojson.js';
+import renewal_units from '../data/renewal_units_geojson.js';
+import private_renewal_units_info from '../data/private_renewal_units_info_dictionary.js';
 
 let dataMgr = new DataManager();
 
@@ -29,7 +30,7 @@ const geolocation = (
         })
 );
 
-let land_coords = land_info.features.map((land, i) => {
+let renewal_units_land_coords = renewal_units.features.map((land, i) => {
     let coords = [];
     let geo = land.geometry;
     if (geo && geo.coordinates[0] && geo.coordinates[0][0]) {
@@ -74,7 +75,7 @@ class Lands extends React.PureComponent {
         //console.log(this.props.index);
         return (
             <Polygon
-                paths={land_coords[this.props.index]}
+                paths={renewal_units_land_coords[this.props.index]}
                 options={{
                     fillColor: 'red',
                     fillOpacity: 0.20,
@@ -111,7 +112,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             </InfoWindow>
         ))}
 
-        {land_info.features.map((land, i) => {
+        {renewal_units.features.map((land, i) => {
 
             {/*console.log(JSON.stringify(coords));*/ }
 
@@ -149,15 +150,20 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 </ModalDialog>
             </ModalContainer>*/
             <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
-
-                    <h3>詳細資料</h3>
-                    <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
-                        區域座標: <br />
-                        {JSON.stringify(props.popupDetail, null, 2)}
+                <div style={{ width: '600px' }}>
+                    <h3>
+                        {private_renewal_units_info[props.popupDetail.id].casename}
+                    </h3>
+                    <p className="panel-body pre-scrollable"
+                        style={{ maxHeight: '400px' }}
+                    >
+                        {JSON.stringify(private_renewal_units_info[props.popupDetail.id], null, 2)}
+                        
                         <FacebookProvider appId="1861039190814893" language="zh_TW">
                             <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
                         </FacebookProvider>
                     </p>
+                </div>
             </ModalDialog>
         )}
 
@@ -219,7 +225,7 @@ export default class ChatMap extends React.Component {
             ],
             infos: [],
             center: { lat: 25.038357847174, lng: 121.54770626982 },
-            // polygons: land_info.features,
+            // polygons: renewal_units.features,
             popupDetail: null,
             popupChat: false,
             landInfoWindow: {
@@ -374,7 +380,7 @@ export default class ChatMap extends React.Component {
             markers: [{
                 position: event.latLng,
             }],
-            popupDetail: land_info.features[i].properties,
+            popupDetail: renewal_units.features[i].properties,
         });
     }
 
@@ -389,7 +395,7 @@ export default class ChatMap extends React.Component {
 
     handleLandDetailClick(targetPolygon) {
         this.setState({
-            popupDetail: land_info.features[this.state.landInfoWindow.landIndex].properties
+            popupDetail: renewal_units.features[this.state.landInfoWindow.landIndex].properties
         });
     }
 

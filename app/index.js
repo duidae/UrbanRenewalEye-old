@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ChatDialog from './ChatDialog';
-import ChatMap from './ChatMap';
+import UrbanRenewalMap from './UrbanRenewalMap';
 
 
 ReactDOM.render(
     <div >
         {/*<ChatDialog />*/}
-        <ChatMap />
+        <UrbanRenewalMap />
     </div>,
     document.getElementById('root'));
