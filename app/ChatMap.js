@@ -14,6 +14,7 @@ import {
     Polygon,
 } from 'react-google-maps';
 import SearchBox from '../node_modules/react-google-maps/lib/places/SearchBox';
+import ReactDisqusThread from 'react-disqus-thread';
 import land_info from './renewal_units_geojson.js';
 
 let dataMgr = new DataManager();
@@ -137,15 +138,33 @@ const UserLocationGoogleMap = withGoogleMap(props => (
         )}
 
         {props.popupDetail != null && (
+            /*
             <ModalContainer onClose={() => props.onLandDetailCloseClick()}>
-                <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '800px' }}>
+                <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%' }}>
                     <h2>詳細資料</h2>
                     <p className="panel-body pre-scrollable" style={{ width: '500px', height: '600px' }}>
                         區域座標: <br />
                         {JSON.stringify(props.popupDetail, null, 2)}
                     </p>
                 </ModalDialog>
-            </ModalContainer>
+            </ModalContainer>*/
+            <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
+                <div style={{height: '600px'}}>
+
+                <h3>詳細資料</h3>
+                <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '500px' }}>
+                    區域座標: <br />
+                    {JSON.stringify(props.popupDetail, null, 2)}
+                    <ReactDisqusThread
+                        shortname="httpsurban-renewalherokuappcom"
+                        identifier="000"
+                        title="Discussion"
+                        url="https://urban-renewal.herokuapp.com/"
+                        category_id="000"
+                        onNewComment={comment => { console.log(comment.text); }} />
+                </p>
+                </div>
+            </ModalDialog>
         )}
 
         {props.popupChat == true && (
@@ -349,11 +368,19 @@ export default class ChatMap extends React.Component {
     }
 
     handlePolygonClick(event, i) {
+        // this.setState({
+        //     landInfoWindow: {
+        //         position: event.latLng,
+        //         landIndex: i
+        //     }
+        // });
+
+        console.log(JSON.stringify(event.latLng));
         this.setState({
-            landInfoWindow: {
+            markers: [{
                 position: event.latLng,
-                landIndex: i
-            }
+            }],
+            popupDetail: land_info.features[i].properties,
         });
     }
 
