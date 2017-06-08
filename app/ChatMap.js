@@ -149,17 +149,15 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 </ModalDialog>
             </ModalContainer>*/
             <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
-                <div style={{ height: '600px' }}>
 
                     <h3>詳細資料</h3>
                     <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
                         區域座標: <br />
                         {JSON.stringify(props.popupDetail, null, 2)}
-                        <FacebookProvider appId="1861039190814893">
-                            <Comments href="https://urban-renewal.herokuapp.com/map.html" />
+                        <FacebookProvider appId="1861039190814893" language="zh_TW">
+                            <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
                         </FacebookProvider>
                     </p>
-                </div>
             </ModalDialog>
         )}
 
