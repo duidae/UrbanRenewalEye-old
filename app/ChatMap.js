@@ -14,7 +14,7 @@ import {
     Polygon,
 } from 'react-google-maps';
 import SearchBox from '../node_modules/react-google-maps/lib/places/SearchBox';
-import ReactDisqusThread from 'react-disqus-thread';
+import FacebookProvider, { Comments } from 'react-facebook';
 import land_info from './renewal_units_geojson.js';
 
 let dataMgr = new DataManager();
@@ -149,21 +149,15 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 </ModalDialog>
             </ModalContainer>*/
             <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
-                <div style={{height: '600px'}}>
 
-                <h3>詳細資料</h3>
-                <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
-                    區域座標: <br />
-                    {JSON.stringify(props.popupDetail, null, 2)}
-                    <ReactDisqusThread
-                        shortname="urbanrenewal"
-                        identifier="44444"
-                        title="Discussion"
-                        url="https://urban-renewal.herokuapp.com/map.html"
-                        category_id="123"
-                        onNewComment={comment => { console.log(comment.text); }} />
-                </p>
-                </div>
+                    <h3>詳細資料</h3>
+                    <p className="panel-body pre-scrollable" style={{ width: '600px', maxHeight: '400px' }}>
+                        區域座標: <br />
+                        {JSON.stringify(props.popupDetail, null, 2)}
+                        <FacebookProvider appId="1861039190814893" language="zh_TW">
+                            <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
+                        </FacebookProvider>
+                    </p>
             </ModalDialog>
         )}
 
