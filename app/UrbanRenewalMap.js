@@ -12,8 +12,8 @@ import {
     TrafficLayer,
     Circle,
     Polygon,
-} from 'react-google-maps';
-import SearchBox from '../node_modules/react-google-maps/lib/places/SearchBox';
+} from '../react-google-maps.myfork';
+import SearchBox from '../react-google-maps.myfork/places/SearchBox';
 import FacebookProvider, { Comments } from 'react-facebook';
 import renewal_units from '../data/renewal_units_geojson.js';
 import private_renewal_units_info from '../data/private_renewal_units_info_dictionary.js';
