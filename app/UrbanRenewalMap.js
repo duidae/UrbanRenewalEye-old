@@ -12,6 +12,7 @@ import {
     TrafficLayer,
     Circle,
     Polygon,
+    Geojson
 } from '../react-google-maps.myfork';
 import SearchBox from '../react-google-maps.myfork/places/SearchBox';
 import FacebookProvider, { Comments } from 'react-facebook';
@@ -82,6 +83,7 @@ class Lands extends React.PureComponent {
                     strokeColor: 'red',
                     strokeOpacity: 1,
                     strokeWeight: 0.7,
+                    zIndex: 100,
                 }}
                 onClick={this._onClick}
                 key={'poly' + this.props.index}
@@ -158,7 +160,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                         style={{ maxHeight: '400px' }}
                     >
                         {JSON.stringify(private_renewal_units_info[props.popupDetail.id], null, 2)}
-                        
+
                         <FacebookProvider appId="1861039190814893" language="zh_TW">
                             <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
                         </FacebookProvider>
@@ -194,6 +196,21 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             inputPlaceholder="來去看看我家附近?"
             inputStyle={INPUT_STYLE}
         />
+
+        {true &&
+            <Geojson
+                url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code1.geojson'}
+                //url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code2.geojson'}
+                //url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code3.geojson'}
+                style={
+                    {
+                        fillColor: 'yellow',
+                        strokeWeight: 0.5,
+                        visible: true,
+                        zIndex: 0
+                    }
+                } />
+        }
     </GoogleMap>
 ));
 
