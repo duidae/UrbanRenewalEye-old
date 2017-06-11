@@ -61,6 +61,13 @@ const INPUT_STYLE = {
     top: `100px`
 };
 
+const ECO_STYLE = {
+    fillColor: 'grey',
+    strokeWeight: 0.5,
+    visible: true,
+    zIndex: 0
+};
+
 class Lands extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -180,23 +187,20 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             bounds={props.bounds}
             controlPosition={google.maps.ControlPosition.TOP_LEFT}
             onPlacesChanged={props.onPlacesChanged}
-            inputPlaceholder="來去看看我家附近?"
-            inputStyle={INPUT_STYLE}
-        />
+            inputPlaceholder="來去看看我家?"
+            inputStyle={INPUT_STYLE} />
 
-        {false &&
-            <Geojson
-                url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code1.geojson'}
-                //url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code2.geojson'}
-                //url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code3.geojson'}
-                style={
-                    {
-                        fillColor: 'yellow',
-                        strokeWeight: 0.5,
-                        visible: true,
-                        zIndex: 0
-                    }
-                } />
+        {props.economicLayer.type == 1 &&
+            <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code1.geojson'}
+                style={ECO_STYLE} />
+        }
+        {props.economicLayer.type == 2 &&
+            <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code2.geojson'}
+                style={ECO_STYLE} />
+        }
+        {props.economicLayer.type == 3 &&
+            <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code3.geojson'}
+                style={ECO_STYLE} />
         }
     </GoogleMap>
 ));
@@ -236,7 +240,10 @@ export default class ChatMap extends React.Component {
                 position: null,
                 landIndex: 0
             },
-            showEcoList: false,
+            economicLayer: {
+                enable: false,
+                type: 0
+            },
         };
 
         this.handleLocationUpdate = this.handleLocationUpdate.bind(this);
@@ -270,7 +277,12 @@ export default class ChatMap extends React.Component {
 
     handleSearchBoxMounted(searchBox) {
         this._searchBox = searchBox;
-        this.setState({ showEcoList: true });
+        this.setState({
+            economicLayer: {
+                enable: true,
+                type: 0
+            }
+        });
     }
 
     handlePlacesChanged() {
@@ -463,17 +475,28 @@ export default class ChatMap extends React.Component {
                     bounds={this.state.bounds}
                     onPlacesChanged={this.handlePlacesChanged}
                     markers={this.state.markers}
+                    economicLayer={this.state.economicLayer}
                 />
-                {this.state.showEcoList && (
+                {this.state.economicLayer.enable && (
 
                     <div style={{ position: `absolute`, top: `115px`, left: `10px` }}>
                         <select
-                            className="form-control"
-                            style={{ width: `200px`, boxShadow: `0 5px 6px rgba(0, 0, 0, 0.5)`, backgroundColor: `white` }}>
-                            <option>無（加值圖層）</option>
-                            <option>一級經濟發布區</option>
-                            <option>二級經濟發布區</option>
-                            <option>三級經濟發布區</option>
+                            className='form-control'
+                            style={{ width: `200px`, boxShadow: `0 5px 6px rgba(0, 0, 0, 0.5)`, backgroundColor: `white` }}
+                            onChange={(event) => {
+                                console.log(event.target.value);
+                                this.setState({
+                                    economicLayer: {
+                                        enable: true,
+                                        type: event.target.value
+                                    }
+                                });
+                            }}
+                        >
+                            <option value={0}>無（加值圖層）</option>
+                            <option value={1}>一級經濟發布區</option>
+                            <option value={2}>二級經濟發布區</option>
+                            <option value={3}>三級經濟發布區</option>
                         </select>
                     </div>
                 )
