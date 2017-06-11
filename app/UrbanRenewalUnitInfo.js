@@ -9,34 +9,38 @@ const UrbanRenewalUnitInfo = (props) => (
         >
             <div className="panel-group">
                 <div className="panel panel-info">
-                    <div className="panel-heading">單元資料</div>
+                    <div className="panel-heading">更新單元資料</div>
                     <div className="panel-body">
                         <table className="table table-striped">
                             <tbody>
                                 <tr>
-                                    <td>計畫名稱</td>
+                                    <td>更新案名</td>
                                     <td>{props.popupDetail.casename}</td>
                                 </tr>
-                                <tr>
-                                    <td>縣市</td>
-                                    <td>{props.popupDetail.city}</td>
+								<tr>
+                                    <td>更新案號</td>
+                                    <td>{props.popupDetail.OfficialId}</td>
                                 </tr>
                                 <tr>
-                                    <td>行政區</td>
-                                    <td>{props.popupDetail.adminDist}</td>
+									<td>行政區</td>
+                                    <td>{props.popupDetail.city}{props.popupDetail.adminDist}</td>
+                                </tr>
+                                <tr>
+                                    <td>劃定類型</td>
+                                    <td>{props.popupDetail.type}</td>
                                 </tr>
                                 <tr>
                                     <td>狀態</td>
                                     <td>{props.popupDetail.status}</td>
                                 </tr>
-                                <tr>
-                                    <td>字號</td>
-                                    <td>{props.popupDetail.OfficialId}</td>
+								<tr>
+                                    <td>基地面積</td>
+                                    <td>{props.popupDetail.area}</td>
                                 </tr>
-                                {
+								{
                                     props.popupDetail.officialDocs && (
-                                        < tr >
-                                            <td>相關文件</td>
+                                        <tr>
+                                            <td>官方公告</td>
                                             <td>
                                                 {
                                                     props.popupDetail.officialDocs.map((doc, i) => {
@@ -57,8 +61,7 @@ const UrbanRenewalUnitInfo = (props) => (
                         </table>
                     </div>
                 </div>
-
-                <div className="panel panel-danger">
+				<div className="panel panel-danger">
                     <div className="panel-heading">相關新聞</div>
                     <div className="panel-body">
                         {
