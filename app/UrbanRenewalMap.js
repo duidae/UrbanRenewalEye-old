@@ -50,7 +50,7 @@ const INPUT_STYLE = {
     MozBoxSizing: `border-box`,
     border: `1px solid transparent`,
     width: `240px`,
-    height: `30px`,
+    height: `32px`,
     marginTop: `9px`,
     padding: `0 12px`,
     borderRadius: `1px`,
@@ -235,7 +235,8 @@ export default class ChatMap extends React.Component {
             landInfoWindow: {
                 position: null,
                 landIndex: 0
-            }
+            },
+            showEcoList: false,
         };
 
         this.handleLocationUpdate = this.handleLocationUpdate.bind(this);
@@ -269,6 +270,7 @@ export default class ChatMap extends React.Component {
 
     handleSearchBoxMounted(searchBox) {
         this._searchBox = searchBox;
+        this.setState({ showEcoList: true });
     }
 
     handlePlacesChanged() {
@@ -462,6 +464,20 @@ export default class ChatMap extends React.Component {
                     onPlacesChanged={this.handlePlacesChanged}
                     markers={this.state.markers}
                 />
+                {this.state.showEcoList && (
+
+                    <div style={{ position: `absolute`, top: `115px`, left: `10px` }}>
+                        <select
+                            className="form-control"
+                            style={{ width: `200px`, boxShadow: `0 5px 6px rgba(0, 0, 0, 0.5)`, backgroundColor: `white` }}>
+                            <option>無（加值圖層）</option>
+                            <option>一級經濟發布區</option>
+                            <option>二級經濟發布區</option>
+                            <option>三級經濟發布區</option>
+                        </select>
+                    </div>
+                )
+                }
             </div>
         );
     }

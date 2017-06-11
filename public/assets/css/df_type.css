@@ -637,7 +637,7 @@ input.ct-red + span + label + span.switch-right {
   color: #DDDDDD;
   opacity: 1;
   filter: alpha(opacity=100); }
-
+/*
 .form-control {
   background-color: #fffcf5;
   border: medium none;
@@ -649,6 +649,7 @@ input.ct-red + span + label + span.switch-right {
   height: 40px;
   -webkit-box-shadow: none;
   box-shadow: none; }
+  */
   .form-control:focus {
     background-color: #FFFFFF;
     -webkit-box-shadow: none;
