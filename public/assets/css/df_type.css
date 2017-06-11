@@ -2161,10 +2161,10 @@ textarea.form-control {
 .nav-text:not(.nav-stacked) > li > a {
   margin-right: 15px; }
 
-.panel {
+/*.panel {
   border: 0;
   border-bottom: 1px solid #DDDDDD;
-  box-shadow: none; }
+  box-shadow: none; }*/
 
 .panel-default > .panel-heading {
   background-color: #FFFFFF;

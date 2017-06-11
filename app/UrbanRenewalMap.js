@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DataManager from './DataManager';
 import ChatDialog from './ChatDialog';
+import UrbanRenewalUnitInfo from './UrbanRenewalUnitInfo';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 import {
     withGoogleMap,
@@ -15,7 +16,6 @@ import {
     Geojson
 } from '../react-google-maps.myfork';
 import SearchBox from '../react-google-maps.myfork/places/SearchBox';
-import FacebookProvider, { Comments } from 'react-facebook';
 import renewal_units from '../data/renewal_units_geojson.js';
 import private_renewal_units_info from '../data/private_renewal_units_info_dictionary.js';
 
@@ -152,20 +152,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                 </ModalDialog>
             </ModalContainer>*/
             <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
-                <div style={{ width: '600px' }}>
-                    <h3>
-                        {private_renewal_units_info[props.popupDetail.id].casename}
-                    </h3>
-                    <p className="panel-body pre-scrollable"
-                        style={{ maxHeight: '400px' }}
-                    >
-                        {JSON.stringify(private_renewal_units_info[props.popupDetail.id], null, 2)}
-
-                        <FacebookProvider appId="1861039190814893" language="zh_TW">
-                            <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
-                        </FacebookProvider>
-                    </p>
-                </div>
+                <UrbanRenewalUnitInfo popupDetail={props.popupDetail}></UrbanRenewalUnitInfo>
             </ModalDialog>
         )}
 
@@ -197,7 +184,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             inputStyle={INPUT_STYLE}
         />
 
-        {true &&
+        {false &&
             <Geojson
                 url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code1.geojson'}
                 //url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code2.geojson'}
@@ -393,11 +380,12 @@ export default class ChatMap extends React.Component {
         // });
 
         console.log(JSON.stringify(event.latLng));
+        let id = renewal_units.features[i].properties.id;
         this.setState({
             markers: [{
                 position: event.latLng,
             }],
-            popupDetail: renewal_units.features[i].properties,
+            popupDetail: private_renewal_units_info[id],
         });
     }
 
