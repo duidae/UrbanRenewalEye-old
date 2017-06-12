@@ -1724,6 +1724,15 @@ module.exports = {
 			{"docName": "計畫書(pdf)", "url": "http://uro.gov.taipei/public/MMO/uro/%E5%A4%A7%E5%90%8C%E5%8D%80B0448.pdf"},
 			{"docName": "計畫圖(pdf)", "url": "http://uro.gov.taipei/public/MMO/uro/%E5%A4%A7%E5%90%8C%E5%8D%80P0448.jpg"}
 		],
+		"news": [
+			{"title": "長安西路都更案 不同意戶曾是房仲", "url": "http://news.ltn.com.tw/news/business/paper/1089207"},
+			{"title": "會吵的孩子就有糖吃嗎？三件事評論長安西路都更張先生案", "url": "http://www.appledaily.com.tw/realtimenews/article/new/20170327/1085620/"},
+			{"title": "屋主含淚撒冥紙 長安西路都更案抗議聲中拆除", "url": "http://news.ltn.com.tw/news/life/breakingnews/2013538"},
+			{"title": "長安西路遭強拆戶：北市府都更拆照形同殺人！不用負責嗎？", "url": "http://www.appledaily.com.tw/realtimenews/article/new/20170323/1082807/"},
+			{"title": "長安西路都更危樓 北市府限不同意戶明天搬離物品", "url": "https://udn.com/news/story/3/2353780"},
+			{"title": "長安西路都更危樓將拆爆衝突 不同意戶：比郝龍斌可惡", "url": "https://udn.com/news/story/2/2358845"},
+			{"title": "長安西路都更戶：開天價 因想讓建商知難而退", "url": "https://newtalk.tw/news/view/2017-03-26/83532"}
+		],
 		"summary": "本更新單元位於臺北市大同區華亭街以東、長安西路177巷以西、華亭街15巷以南及長安西路以北所圍街廓之北側",
 		"area": " 1,278.00平方公尺"
 	},
