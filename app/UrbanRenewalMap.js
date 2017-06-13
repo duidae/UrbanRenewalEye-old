@@ -86,10 +86,10 @@ class Lands extends React.PureComponent {
                 paths={renewal_units_land_coords[this.props.index]}
                 options={{
                     fillColor: 'red',
-                    fillOpacity: 0.20,
+                    fillOpacity: 0.30,
                     strokeColor: 'red',
                     strokeOpacity: 1,
-                    strokeWeight: 0.7,
+                    strokeWeight: 1.5,
                     zIndex: 100,
                 }}
                 onClick={this._onClick}

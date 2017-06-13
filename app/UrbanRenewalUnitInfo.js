@@ -60,6 +60,9 @@ const UrbanRenewalUnitInfo = (props) => (
                             </tbody>
                         </table>
                     </div>
+					<div className="panel-footer text-center">
+						<a className="btn btn-danger btn-fill btn-md" href="login.html">看專業版</a>
+					</div>
                 </div>
 				<div className="panel panel-danger">
                     <div className="panel-heading">相關新聞</div>
@@ -88,7 +91,7 @@ const UrbanRenewalUnitInfo = (props) => (
                             )
                         }
                         {
-                            !props.popupDetail.news && (<span>一片空白</span>)
+                            !props.popupDetail.news && (<span>我不有名...</span>)
                         }
                     </div>
                 </div>
