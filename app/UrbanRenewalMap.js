@@ -80,14 +80,17 @@ class Lands extends React.PureComponent {
     }
 
     render() {
-        //console.log(this.props.index);
+        //console.log(renewal_units.features[this.props.index].properties.status);
+		let color = 'red';
+		if(renewal_units.features[this.props.index].properties.status == '失效') {color='grey';}
+		
         return (
             <Polygon
                 paths={renewal_units_land_coords[this.props.index]}
                 options={{
-                    fillColor: 'red',
-                    fillOpacity: 0.30,
-                    strokeColor: 'red',
+                    fillColor: color,
+                    fillOpacity: 0.40,
+                    strokeColor: color,
                     strokeOpacity: 1,
                     strokeWeight: 1.5,
                     zIndex: 100,
@@ -98,7 +101,6 @@ class Lands extends React.PureComponent {
         );
     }
 }
-
 
 const UserLocationGoogleMap = withGoogleMap(props => (
     <GoogleMap
