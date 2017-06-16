@@ -158,7 +158,7 @@ const UserLocationGoogleMap = withGoogleMap(props => (
                     </p>
                 </ModalDialog>
             </ModalContainer>*/
-            <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '100px' }}>
+            <ModalDialog onClose={() => props.onLandDetailCloseClick()} style={{ left: '50%', top: '80px' }}>
                 <UrbanRenewalUnitInfo popupDetail={props.popupDetail}></UrbanRenewalUnitInfo>
             </ModalDialog>
         )}
