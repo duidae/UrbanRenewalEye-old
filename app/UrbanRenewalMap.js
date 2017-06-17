@@ -63,7 +63,7 @@ const INPUT_STYLE = {
 
 const ECO_STYLE = {
     fillColor: 'grey',
-    strokeWeight: 0.5,
+    strokeWeight: 2.5,
     visible: true,
     zIndex: 0
 };
@@ -501,7 +501,7 @@ export default class ChatMap extends React.Component {
                             }}
                         >
                             <option value={0}>無（加值圖層）</option>
-                            <option value={1}>北市行政區</option>
+                            <option value={1}>臺北市行政區</option>
                             <option value={2}>一級經濟發布區</option>
                             <option value={3}>二級經濟發布區</option>
                             <option value={4}>三級經濟發布區</option>
