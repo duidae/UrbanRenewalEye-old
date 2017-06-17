@@ -192,15 +192,20 @@ const UserLocationGoogleMap = withGoogleMap(props => (
             inputPlaceholder="來去看看我家?"
             inputStyle={INPUT_STYLE} />
 
-        {props.economicLayer.type == 1 &&
+
+        {props.additionalMayLayer.type == 1 &&
+            <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/admin_area_taipei.geojson'}
+                style={ECO_STYLE} />
+        }
+        {props.additionalMayLayer.type == 2 &&
             <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code1.geojson'}
                 style={ECO_STYLE} />
         }
-        {props.economicLayer.type == 2 &&
+        {props.additionalMayLayer.type == 3 &&
             <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code2.geojson'}
                 style={ECO_STYLE} />
         }
-        {props.economicLayer.type == 3 &&
+        {props.additionalMayLayer.type == 4 &&
             <Geojson url={'https://raw.githubusercontent.com/Pentatonic/GoogleVisionOCR/master/TPE/code3.geojson'}
                 style={ECO_STYLE} />
         }
@@ -242,7 +247,7 @@ export default class ChatMap extends React.Component {
                 position: null,
                 landIndex: 0
             },
-            economicLayer: {
+            additionalMayLayer: {
                 enable: false,
                 type: 0
             },
@@ -280,7 +285,7 @@ export default class ChatMap extends React.Component {
     handleSearchBoxMounted(searchBox) {
         this._searchBox = searchBox;
         this.setState({
-            economicLayer: {
+            additionalMayLayer: {
                 enable: true,
                 type: 0
             }
@@ -477,9 +482,9 @@ export default class ChatMap extends React.Component {
                     bounds={this.state.bounds}
                     onPlacesChanged={this.handlePlacesChanged}
                     markers={this.state.markers}
-                    economicLayer={this.state.economicLayer}
+                    additionalMayLayer={this.state.additionalMayLayer}
                 />
-                {this.state.economicLayer.enable && (
+                {this.state.additionalMayLayer.enable && (
 
                     <div style={{ position: `absolute`, top: `115px`, left: `10px` }}>
                         <select
@@ -488,7 +493,7 @@ export default class ChatMap extends React.Component {
                             onChange={(event) => {
                                 console.log(event.target.value);
                                 this.setState({
-                                    economicLayer: {
+                                    additionalMayLayer: {
                                         enable: true,
                                         type: event.target.value
                                     }
@@ -496,9 +501,10 @@ export default class ChatMap extends React.Component {
                             }}
                         >
                             <option value={0}>無（加值圖層）</option>
-                            <option value={1}>一級經濟發布區</option>
-                            <option value={2}>二級經濟發布區</option>
-                            <option value={3}>三級經濟發布區</option>
+                            <option value={1}>北市行政區</option>
+                            <option value={2}>一級經濟發布區</option>
+                            <option value={3}>二級經濟發布區</option>
+                            <option value={4}>三級經濟發布區</option>
                         </select>
                     </div>
                 )
