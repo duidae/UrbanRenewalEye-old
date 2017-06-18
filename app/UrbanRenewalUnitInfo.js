@@ -61,7 +61,7 @@ const UrbanRenewalUnitInfo = (props) => (
                         </table>
                     </div>
 					<div className="panel-footer text-center">
-						<a className="btn btn-danger btn-fill btn-md" href="login.html">看專業版</a>
+						<a className="btn btn-danger btn-fill btn-md" target ="_blank" href="report/professional.pdf">看專業版</a>
 					</div>
                 </div>
 				<div className="panel panel-danger">
