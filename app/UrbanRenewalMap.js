@@ -81,9 +81,19 @@ class Lands extends React.PureComponent {
 
     render() {
         //console.log(renewal_units.features[this.props.index].properties.status);
-		let color = 'red';
-		if(renewal_units.features[this.props.index].properties.status == '失效') {color='grey';}
-		
+		let color;
+		if(renewal_units.features[this.props.index].properties.type == '自行劃定') {
+			// 自行劃定
+			color = 'red';
+			if(renewal_units.features[this.props.index].properties.status == '失效') {
+				color='grey';
+			}
+		}
+		else {
+			// 政府劃定
+			color='blue';
+		}
+			
         return (
             <Polygon
                 paths={renewal_units_land_coords[this.props.index]}
