@@ -486,7 +486,7 @@ export default class ChatMap extends React.Component {
                 />
                 {this.state.additionalMayLayer.enable && (
 
-                    <div style={{ position: `absolute`, top: `115px`, left: `10px` }}>
+                    <div style={{ position: `absolute`, top: `130px`, left: `10px` }}>
                         <select
                             className='form-control'
                             style={{ width: `200px`, boxShadow: `0 5px 6px rgba(0, 0, 0, 0.5)`, backgroundColor: `white` }}
