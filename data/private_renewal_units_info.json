@@ -11976,5 +11976,90 @@
 		],
 		"summary": "本更新單元位於臺北市萬華區成都路105巷以東、康定路25巷以南、昆明街以西、成都路以北所圍之完整街廓",
 		"area": " 2,374.1平方公尺"
+	},
+	"public02大同區_1": {
+		"city": "臺北市",
+		"adminDist": "大同區",
+		"casename": "擬定臺北市大同區大同段一小段391-2地號等29筆土地都市更新計畫暨配合擴大劃定同小段465-2地號等4筆土地為更新地區",
+		"type": "政府劃定",
+		"status": "有效",
+		"OfficialId": "更新地區",
+		"officialDocs": [
+			{"docName": "公告(pdf)", "url": "http://uro.gov.taipei/public/Attachment/732816105658.pdf"},
+			{"docName": "更新計畫書(pdf)", "url": "http://uro.gov.taipei/public/Attachment/73281611254.pdf"},
+			{"docName": "更新計畫圖(pdf)", "url": "http://uro.gov.taipei/public/Attachment/732816115247.pdf"}
+		],
+		"news": [
+			{"title": "〈台北都會〉蘭州、斯文里整宅都更 林欽榮︰不得已將強拆", "url": "http://news.ltn.com.tw/news/local/paper/1072181"},
+			{"title": "蘭州、斯文里都更案 本週五都委會審議", "url": " https://udn.com/news/story/3/2236141"},
+			{"title": "北市斯文里公辦都更 953車位均不分配住戶", "url": "http://news.ltn.com.tw/news/life/breakingnews/1868597"},
+			{"title": "蘭州斯文里公辦都更 採滾動分期開發明年啟動", "url": "http://news.cnyes.com/news/id/3590566"},
+			{"title": "整宅公辦都更 斯文里3期可望搶第一", "url": "https://udn.com/news/story/7323/2146606"},
+			{"title": "南機場公辦都更 林欽榮：不再考慮廢校蓋中繼宅", "url": "http://news.ltn.com.tw/news/life/breakingnews/1907235"},
+			{"title": "公宅政策啟動 柯文哲：下一步蘭州斯文里", "url": "http://news.ltn.com.tw/news/life/breakingnews/2000087"},
+			{"title": "蘭州、斯文里公辦都更 市府將列20億預算直接蓋", "url": "http://news.ltn.com.tw/news/life/breakingnews/1779781"}
+		],
+		"summary": "本更新地區位於大同區昌吉街 61 巷 9 弄及昌吉街北側、昌吉街61 巷東側、重慶北路三段 113 巷及大龍街 91 巷南側、承德路三段 108巷 28 弄及 8 公尺未開闢未徵收之計畫道路西側所圍街廓範圍內。其中蘭州國宅座落於昌吉街 61 巷 9 弄、昌吉街 61 巷、重慶北路三段113 巷及大龍街所圍土地；斯文里一、二、三期整建住宅座落於昌吉街、大龍街、大龍街 85 巷、大龍街 91 巷、承德路三段 108 巷 28 弄及 8 公尺未開闢未徵收之計畫道路所圍土地。",
+		"area": "21,236.38 平方公尺"
+	},
+	"public07文山區_1": {
+		"city": "臺北市",
+		"adminDist": "文山區",
+		"casename": "變更臺北市文山區變電所南側附近更新地區範圍界線計畫案",
+		"type": "政府劃定",
+		"status": "有效",
+		"OfficialId": "更新地區",
+		"officialDocs": [
+			{"docName": "公告(pdf)", "url": "http://uro.gov.taipei/public/Attachment/75217312232.pdf"},
+			{"docName": "計畫書(pdf)", "url": "http://uro.gov.taipei/public/Attachment/75217301227.pdf"},
+			{"docName": "計畫圖(pdf)", "url": "http://uro.gov.taipei/public/Attachment/75217303482.pdf"}
+		],
+		"summary": "變更臺北市文山區變電所南側附近更新地區範圍界線計畫案",
+		"area": "2,896.54 平方公尺"
+	},
+	"public11南港區_1": {
+		"city": "臺北市",
+		"adminDist": "南港區",
+		"casename": "劃定臺北市南港區南港段二小段671-6地號等52筆土地為更新地區",
+		"type": "政府劃定",
+		"status": "有效",
+		"OfficialId": "更新地區",
+		"officialDocs": [
+			{"docName": "公告(pdf)", "url": "http://uro.gov.taipei/public/Attachment/6102516411498.pdf"},
+			{"docName": "計畫書(pdf)", "url": "http://uro.gov.taipei/public/Attachment/610251642062.pdf"},
+			{"docName": "計畫圖(pdf)", "url": "http://uro.gov.taipei/public/Attachment/6102516422554.pdf"}
+		],
+		"summary": "劃定臺北市南港區南港段二小段671-6地號等52筆土地為更新地區",
+		"area": "26,047.65 平方公尺"
+	},
+	"public03大安區_1": {
+		"city": "臺北市",
+		"adminDist": "大安區",
+		"casename": "劃定臺北市大安區瑞安段二小段838地號等14筆土地為更新地區",
+		"type": "政府劃定",
+		"status": "有效",
+		"OfficialId": "更新地區",
+		"officialDocs": [
+			{"docName": "公告(pdf)", "url": "http://uro.gov.taipei/public/Attachment/612131744279.pdf"},
+			{"docName": "計畫書(pdf)", "url": "http://uro.gov.taipei/public/Attachment/612131742480.pdf"},
+			{"docName": "計畫圖(pdf)", "url": "http://uro.gov.taipei/public/Attachment/6121317434121.pdf"}
+		],
+		"summary": "劃定臺北市大安區瑞安段二小段838地號等14筆土地為更新地區",
+		"area": "2,921 平方公尺"
+	},
+	"public01士林區_1": {
+		"city": "臺北市",
+		"adminDist": "士林區",
+		"casename": "劃定臺北市士林區陽明段三小段627地號等3筆土地為更新地區",
+		"type": "政府劃定",
+		"status": "有效",
+		"OfficialId": "更新地區",
+		"officialDocs": [
+			{"docName": "公告(pdf)", "url": "http://uro.gov.taipei/public/Attachment/711017413868.pdf"},
+			{"docName": "計畫書(pdf)", "url": "http://uro.gov.taipei/public/Attachment/711017434011.pdf"},
+			{"docName": "計畫圖(pdf)", "url": "http://uro.gov.taipei/public/Attachment/71101744653.pdf"}
+		],
+		"summary": "劃定臺北市士林區陽明段三小段627地號等3筆土地為更新地區",
+		"area": "3,090 平方公尺"
 	}
 }
