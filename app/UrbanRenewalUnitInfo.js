@@ -123,7 +123,7 @@ const UrbanRenewalUnitInfo = (props) => (
 
             <div className='well'>
                 <FacebookProvider appId="1861039190814893" language="zh_TW">
-                    <Comments href={"https://urban-renewal.herokuapp.com/map.html" + props.popupDetail.id} />
+                    <Comments href={"https://urban-renewal.herokuapp.com/map.html#" + props.popupDetail.OfficialId} />
                 </FacebookProvider>
             </div>
         </div>
