@@ -516,9 +516,17 @@ export default class ChatMap extends React.Component {
                             <option value={3}>二級經濟發布區</option>
                             <option value={4}>三級經濟發布區</option>
                         </select>
-                    </div>
+                    </div>		
                 )
                 }
+				<div style={{ position: `absolute`, top: `600px`, left: `10px`, backgroundColor: `white`, textAlign: `center`}}>
+				<br/>
+				<font>圖例</font><br/>
+				<font color="blue">　■政府劃定更新地區　</font><br/>
+				<font color="red">　■自行劃定更新單元　</font><br/>
+				<font color="grey">　■已失效之更新單元　</font><br/>
+				<br/>
+				</div>
             </div>
         );
     }
