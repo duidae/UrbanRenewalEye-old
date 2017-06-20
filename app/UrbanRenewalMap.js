@@ -81,19 +81,19 @@ class Lands extends React.PureComponent {
 
     render() {
         //console.log(renewal_units.features[this.props.index].properties.status);
-		let color;
-		if(renewal_units.features[this.props.index].properties.type == '自行劃定') {
-			// 自行劃定
-			color = 'red';
-			if(renewal_units.features[this.props.index].properties.status == '失效') {
-				color='grey';
-			}
-		}
-		else {
-			// 政府劃定
-			color='blue';
-		}
-			
+        let color;
+        if (renewal_units.features[this.props.index].properties.type == '自行劃定') {
+            // 自行劃定
+            color = 'red';
+            if (renewal_units.features[this.props.index].properties.status == '失效') {
+                color = 'grey';
+            }
+        }
+        else {
+            // 政府劃定
+            color = 'blue';
+        }
+
         return (
             <Polygon
                 paths={renewal_units_land_coords[this.props.index]}
@@ -516,16 +516,23 @@ export default class ChatMap extends React.Component {
                             <option value={3}>二級經濟發布區</option>
                             <option value={4}>三級經濟發布區</option>
                         </select>
-                    </div>		
-                )
-                }
-				<div style={{ position: `absolute`, bottom: `50px`, left: `10px`, backgroundColor: `white`, textAlign: `center`}}>
-				<b>圖例</b><br/>
-				<font color="blue">　■政府劃定更新地區　</font><br/>
-				<font color="red">　■自行劃定更新單元　</font><br/>
-				<font color="grey">　■已失效之更新單元　</font><br/>
-				<br/>
-				</div>
+                    </div>
+                )}
+                <div style={{
+                    position: `absolute`,
+                    bottom: `50px`,
+                    left: `10px`,
+                    backgroundColor: `white`,
+                    textAlign: `center`,
+                    boxShadow: `5px 5px 6px rgba(0, 0, 0, 0.5)`,
+                    borderRadius: `4px`,
+                    padding: `12px 2px`
+                }}>
+                    <b>圖例</b><br />
+                    <font color="blue">　■ 政府劃定更新地區　</font><br />
+                    <font color="red">　■ 自行劃定更新單元　</font><br />
+                    <font color="grey">　■ 已失效之更新單元　</font><br />
+                </div>
             </div>
         );
     }
