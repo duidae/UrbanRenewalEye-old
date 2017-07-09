@@ -89,64 +89,109 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
     </div>
 
 <!-- showcase -->   
-    <br><br><br>
-    <h3></h3>
-        <h5>都市更新到底是美夢？居住品質變好、安全性提高；<br>
-            還是惡夢？遮風避雨的家被拆，都更時程一拖好幾年，有家歸不得....<br><br>
-            夢的背後制度真相到底為何？下面就讓我們一起來為大家解夢吧！</h5>
-       <br/>
-				
-    
+    <div class="wrapper">
+        <div class="landing-header" style="background-image: url('img/urenew_landing_bg.png'); ">
+            <div class="container">
+                <div class="motto">
+                    <img src="img/header_title.png" class="img-responsive  text-left-min  " alt="住宅大改造：都市更新好家在">
+                    <h3></h3>
+                    <h5>都市更新到底是美夢？居住品質變好、安全性提高；<br>
+                        還是惡夢？遮風避雨的家被拆，都更時程一拖好幾年，有家歸不得....<br><br>
+                        夢的背後制度真相到底為何？下面就讓我們一起來為大家解夢吧！</h5>
+                    <br/>
+                </div>
+            </div>    
+        </div>
 
         
-     
+        <div class="main">
+
+             <div class="section section-light-blue landing-section text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 "><img src="img/urenew_pic01_01.png" class="img-responsive  text-left-min  " alt="住宅大改造：都市更新好家在">
+                        </div>
+                        <br>
+                        <div class="col-md-6 ">
                             <p class="text-left text-left-min">英國倫敦最美的車站—聖潘克斯車站、日本的「表玄關」—東京車站，不論是轉乘洽公、觀光休憩、採購血拚、朋友聚餐都能滿足來自四面八方旅客的需求。而這兩座百年車站又是如何走過時代演變，跟上都市發展的腳步，與現代建築融合，答案是一個又一個的都市更新計畫。<br><br>
                             在台灣，像是新北市的三峽老街、宜蘭車站南側的幾米公園等著名的觀光景點，也都是經由都市更新計畫改造而成的。但都市更新不是只與車站、老街、歷史建物的改造有關，而我們所居住的老舊房屋、不合時宜的公共設施等，其實也與我們的居住的安全、生活環境品質的提升息息相關。<br><br>
                             因此，我們期待：未來可以透過制度的改革，或精進執行的步驟，改善台灣已邁入老化的城市建築與機能，擺脫危樓老屋的安全威脅，提升居住品質，活化城市機能，進而促進都市轉型。</p>
+                        </div>
+                    </div>         
+                </div>
+            </div>
 <article id="about"></article>  
 
 <!-- 什麼是都市更新 -->         
             
-            
+            <div class="section text-center landing-section section-light-zone00">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <img src="img/urenew_pic02_01.png" class="img-responsive center-block img-responsive80" alt="什麼是都市更新">
                             <h2 >什麼是都市更新</h2><br>
                             <p class="text-left-min">都市土地占全國土地比例僅13%，但全國卻有80%的人口集中生活在都市裡，如何有效率地使用每一寸土地是都市興衰的關鍵，有關都市生活的經濟、交通、衛生、保安、國防、文教、康樂等重要設施，都需要長遠合理規劃發展，這就是所謂的「都市計畫」。</span>
                             <p class="text-left-min"><span class="text-purple"><b>都市更新則是都市計畫的一種開發手段</b></span>，針對已有安全之虞或不符合都市未來發展的區域(例如建築老化)，進行<a  aria-hidden="true" data-toggle="modal" data-target="#myModal" href="#">重建、整建與維護<i class="fa fa-info-circle"></i></a>，目的是促進都市土地有計畫的利用，整體改善空間環境與復甦都市機能，增進居民的公共利益，促使城市轉型與提升生活品質。</br></p>
-            
+                        </div>
+                    </div>
+
+                   <div class="row">
+                        <div class="col-md-12">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>都更對於政府、屋主和民眾的影響</span></li>
                         </ul>
-            
+                        </div>
 
-            
-            
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 column02">
+                            <img src="img/urenew_pic02_02.png" class="img-circle img-responsive center-block" alt="政府">   
                             <h3>對「政府」的影響</h3>
                             <p class="text-left">政府透過容積獎勵與租稅優惠等方式，鼓勵私人土地提供人行步道、開放空間，加速推動都更，以改善城市環境、復甦都市機能、<a  aria-hidden="true" data-toggle="modal" data-target="#myModal01" href="#">提升經濟成長率、就業率。<i class="fa fa-info-circle"></i></a></span></p>
-            
+                        </div>
 
-            
+                        <div class="col-md-4 column02">
+                            <img src="img/urenew_pic02_03.png" class="img-circle img-responsive center-block" alt="屋 主"> 
                             <h3>對「屋主」的影響</h3>
                             <p class="text-left">透過都市更新，屋主可獲得較安全、美觀的居住環境，財產價值亦可能提升，或可享有不動產相關的租稅優惠。</p>
-            
+                        </div>
 
-            
+                        <div class="col-md-4 column02">
+                            <img src="img/urenew_pic02_04.png" class="img-circle img-responsive center-block" alt="一般民眾">    
                             <h3>對「一般民眾」的影響</h3>
                             <p class="text-left">都更後，住屋周圍環境改善，臨近的居民除可免於危樓的安全威脅、周遭的綠地與人行道亦有可能因此而增加，且因都更改善區域生活機能，進而帶動地區發展，商業活動增加，就如三峽老街。</p>
-            
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>都市更新有幾種？</span></li></ul>
-            
+                        </div>
+                    </div>
 
-                    
+                    <div class="row">
+                        <div class="col-md-12">
                             <p class="text-left-min">都市更新規模可能小至數棟建物基地、大到整個社區、甚至因應整個都市的經濟與產業發展策略計畫，所需的環境重新規劃與公共設施興建，都包含在內。<br>
                             基於規模及其條件，會延伸出不同需求。</p> <br>
-                    
+                            <img src="img/urenew_pic02_05.png" class="img-responsive center-block" alt="都市更新有幾種？"><br>
                             <p class="text-left-min">一般大眾對於都更的想像大多停留在建築物改建，但事實上都市更新在更新面積劃定、程序、公共設施的改進上，都有一定的標準，單棟小面積的建物改建，其實並非屬於都市更新的範疇。</p> 
                            
-                    
+                            
+                        </div>
+                    </div>
 
       
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>  
 
 
 
@@ -154,47 +199,111 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 <article id="now"></article>  
 
 
-      
+            <div class="section landing-section text-center section-light-zone2">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="img/urenew_pic03_01.png" class="img-responsive center-block img-responsive80" alt="都市現況">
                             <h2 >都市現況</h2>
-      
-      
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>台灣有8成的人生活在13%的土地上</span></li>
                         </ul>
-      
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <img src="img/urenew_pic03_02.png" class="img-responsive " alt="台灣有8成的人生活在13%的土地上">
+                        </div>
+
+                        <div class="col-md-6 ">
                         <p class="text-left">台灣約有79.8%的人居住在都市計畫區之中，而都市卻只佔全國土地總面積的13%，都市地區平均人口密度為3,884人/平方公里，也就是一座大安森林公園裡面大概住了335戶人家(1,007人)。<br><br>
                         大量的人口擠在相對有限的土地裡，代表我們對於都市的空間使用需求非常高，因此如何有效率地使用，更顯重要。</p><br>
-      
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>危險及老舊建物眾多，安全堪慮</span></li>
                         </ul>
-      
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <img src="img/urenew_pic03_03.png" class="img-responsive " alt="台灣有8成的人生活在13%的土地上">
+                        </div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-md-12 ">
                         <p class="text-left">除了為配合都市建設所做的都市更新外，都市更新尚有老屋再造功能，這不僅可改善市容，更有安全考量。根據內政部統計，截至2015年底，六都共有42%的房屋屋齡超過30年。<br><br>
                         同時，在1999年921地震後，政府便提高了房屋耐震標準，因此許多1999年以前建的房屋，已不符合現在的建築安全標準。依照內政部推估，若依公有建築物的耐震評估經驗，約有40%的老舊建築物需補強或重建，也就是全國約有34萬戶有安全上之疑慮。</p><br>
+                        </div>
+                    </div>
+                    </div>
 
 
-
+                    <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>區域發展不均的都更進度</span></li>
                         </ul>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <img src="img/urenew_pic03_04.png" class="img-responsive " alt="區域發展不均的都更進度">
+                        </div>
+                    </div>
 
-
+                    <div class="row">    
+                        <div class="col-md-12 ">
                         <p class="text-left">我國的都市更新案件多集中在雙北，自1998年起六都的都更案件中，台北市就佔了74%、新北市佔了15%。<br><br>
                             雖然台北市老屋比例確實相對高(64%)，但其餘五都的老屋數量也不少，不能忽視其需求。<br></p><br>
                         <p class="text-note text-left">
+                        </div>
+                    </div>
+                    </div>
+
+                    </div>
+
+                    </div>
+                </div>
+            </div>
 
 
 <!-- 都更流程 -->
 <article id="process"></article>   
-
+            <div class="section landing-section text-center section-light-zone5">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="img/urenew_pic04_01.png" class="img-responsive center-block img-responsive80" alt="都更流程">
                             <h2>都更流程</h2>
                             <p class="text-left-min"><h5>都市更新可分為四個階段：<b>「事業概要」、「事業計畫」、「權利變換或協議合建」、「執行」。</b></h5></p>
+                            <img src="img/urenew_pic04_02.png" class="img-responsive center-block" alt="都市更新可分為四個階段：「事業概要」、「事業計畫」、「權利變換或協議合建」、「執行」。">
+                        </div>
+                    </div>
 
 
+                    <div class="row">
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>事業概要階段</span></li>
@@ -215,9 +324,9 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                             <b>註2 ─ 取得1/10以上同意書：</b>私有土地及私有合法建築物所有權人，以及土地總面積及合法建築物總樓地板面積，皆須超過1/10同意。(依<a href="http://www.judicial.gov.tw/constitutionalcourt/p03_01.asp?expno=709" target="_blank" >大法官釋字第709號解釋該同意比例違憲</a>，正在研議修法提高同意比例)
                         </p></li>
                         </ol>
+                        </div>
 
-
-
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>事業計畫階段</span></li>
@@ -231,22 +340,30 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                             <li><p>有疑義時，可以在公開展覽、公聽會、聽證時，用口頭或書面的方式提出，以確保自身權益。</p></li>
                             <li><p>拆遷安置計畫(房子重建期間原住戶的去處問題)。</p></li>
                             <li><p>需要取得地主及合法建築物所有權人同意，同意比例如下表。</p>
-                              
+                                <img src="img/urenew_pic04_03.png" class="img-responsive " alt="取得地主及合法建築物所有權人同意比例"><br>
                                 <p class="text-note text-left"><b>註1 ─ 政府劃定的更新地區：</b><br>
                                  縣市政府可依<a  aria-hidden="true" data-toggle="modal" data-target="#myModal02" href="#">都市狀況<i class="fa fa-info-circle"></i></a>，將一定範圍的區域劃定為「更新地區」，是都市更新的重點策略地區。</p>
                              </li>
                         </ol>
+                        </div>
+
+                    </div>
 
 
 
+                    <div class="row">
+                        <div class="col-md-12 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>權利變換階段</span></li>
                         </ul>
                         <p class="text-left-min"><h5><b>決定都更後，重建後的土地與建物如何分配。</b></h5>
                         <span class="label5 label5-black">此階段須注意：</span><br></p>
+                        </div>
+                    </div>
 
-
+                    <div class="row">
+                        <div class="col-md-6 column03">
                         <ol class="text-left">
                             <li><p>確認需<a  aria-hidden="true" data-toggle="modal" data-target="#myModal03" href="#">共同負擔<i class="fa fa-info-circle"></i></a>的金額、土地及建物。</p></li>
                             <li><p>確認公開抽籤作業方式。</p></li>
@@ -259,14 +376,21 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                         <p class="text-left">「權利變換」的「折價抵付」是一種等值交換的概念。</p>
                         </blockquote><br>
                         <p>如果以權利變換的方式進行都更，分配方式是更新後的總價值扣掉共同負擔，再依照地主擁有更新前未開發價值佔總地基價值的比例，進行分配。簡單地說地主其實是用更新後房地價值支付了實施者執行都更計畫的成本，也就是法律上所謂的「折價抵付」。<br><br>
-                      
+                        <img src="img/urenew_pic04_04.png" class="img-responsive " alt="都更後可分配價值"><br>
                         若實際分配的土地及建物價值高於應可分配價值，則須繳納差價給實施者；反之，其低於應可分配價值者，實施者應發還差價。</p></p></li>
                         </ol>
+                        </div>
+
+                        <div class="col-md-6 column03">
+                        <p class="text-left">
+                        <img src="img/urenew_pic04_05.png" class="img-responsive " alt="Q：假設王老先生有塊地價值一百萬元，在更新後到底可以分配到多少價值的土地呢？"><br>
+                        </p>
+                        </div>
+                    </div>
 
 
-
-
-
+                    <div class="row">
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>協議合建階段</span></li>
@@ -286,9 +410,9 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                         核心差異在於更新前後的產權價值認定。協議合建完全是雙方自由議定，雙方只要有共識，可不經由估價程序；權利變換則必須經由估價程序來評估土地價值，再以此作為更新後產權分配的依據。<br>
                         </p>
                         </blockquote>
+                        </div>
 
-
-
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>執行階段</span></li>
@@ -299,12 +423,18 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                             <li><p>若是都更案屬重建，權利變換範圍內應拆除的土地改良物在實施者公告30日之內需遷移。</p></li>
                             <li><p>反對戶：由於都更案是採多數決而非共識決，如果最後仍有住戶堅持不肯遷移，可能會面臨強制拆遷的窘境。這也是目前都更最大的爭議與僵局！</p></li>
                         </ol>
+                        </div>
+
+                    </div>
 
 
 
 
 
 
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -313,15 +443,29 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <!-- 政策建議proposal -->
 <article id="proposal"></article> 
-  
+            <div class="section landing-section text-center section-light-zone6">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="img/urenew_pic05_01.png" class="img-responsive center-block img-responsive80" alt="問題與建議">
                             <h2>問題與建議</h2>
-  
-  
+                        </div>
+                    </div>
+
+                     <div class="row">
+                        <div class="col-md-12 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>法規與程序問題</span></li>
                         </ul>
-  
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 column03">
 
                         <h5 class="text-left"><b>行政(審議)程序冗長：</b></h5>
                         <span class="text-left">
@@ -337,8 +481,9 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                                 <p class="text-left">針對全體同意、無爭議者、有安全疑慮者，設計其適用之簡易流程與標準。</p>
                                 </blockquote>
                                 <br></p></span>
+                        </div>
 
-
+                        <div class="col-md-6 column03">
                         <h5 class="text-left">
                             <span class="text-purple"><b>獎勵標準不明確：</b></span></h5>
                         <span class="text-left">
@@ -351,7 +496,14 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                                     初期即可明確計算，去除審議過程中的人為操控因素，將模糊空間降至最低。</p>
                                 </blockquote>
                             </p></span>
+                        </div>
 
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>整合與實施問題</span></li>
@@ -388,6 +540,9 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                         </span>
 
 
+                        </div>
+
+                        <div class="col-md-6 column03">
                         <ul id="navlist">
                         <li class="list1"></li>
                         <li class="list2"><span>反對戶的問題</span></li>
@@ -416,24 +571,46 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                         </span>
 
 
+                        </div>
+
+
+                    </div>
+
+
+                 
+                    </div>
+                </div>
+            </div>
 
 
 
 <!--結論 -->
 <article id="conclusion"></article> 
-
+            <div class="section section-light-blue landing-section text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 ">
                             <h2>結  論</h2>
                             <br>
                             <p><span class="text-left-min ">因為都市更新與個人財產權密不可分的關係，產生諸多公說公有理，婆說婆有理的紛爭。但當城市逐漸老化，公共安全與城市機能轉型的需求增加，都市更新的迫切性大為提升，勢必會和個人財產權有所衝突，應如何權衡，並扭轉大眾對都市更新僅是建築物改建的刻板印象，考驗著政府和社會的智慧。<br><br>
                             未來，台灣各城市機能、建物老化的地區，如台中火車站、台北南機場整宅等地，是否有可能透過都市更新，內部擺脫危樓老屋的安全威脅，提升居住品質，解決高齡化無障礙空間的問題；外部，改善環境，建構完善公共空間，活化城市機能，進而促進都市轉型。端看政府是否有健全都市更新制度的決心。</span></p>
-
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
 
                     <h3></h3>
 
 
                     <h4></h4>
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <a href="http://www.393citizen.com" target="_blank" class="btn btn-danger btn-fill btn-lg">本頁內容轉載自393公民平台</a>
+                        </div>
+                    </div> 
 
-                            
+            </div>    
+        </div>
 
 <!--
     <footer class="footer-demo section-dark">
