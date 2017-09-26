@@ -60,12 +60,13 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  <a class="navbar-brand scrolly" href="http://www.393citizen.com" target="_blank"><img src="img/urlogo.png"  alt="都市更新天眼通" ></a>
+		  <a class="navbar-brand scrolly" href="https://urban-renewal.herokuapp.com/" target="_blank"><img src="img/urlogo.png"  alt="都市更新天眼通" ></a>
         </div>
     
         <div class="collapse navbar-collapse" id="navigation2">
           <ul class="nav navbar-nav navbar-right">
 			  <!--<li><a href="#about" class="scrolly btn btn-simple">什麼是都市更新</a></li>-->
+			  <!--
 			  <li class="dropdown">
 				  <a class="scrolly btn btn-simple dropdown-toggle" data-toggle="dropdown" href="#">什麼是都市更新
 				  <span class="caret"></span></a>
@@ -77,10 +78,13 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 					 <li><a href="#conclusion" class="scrolly btn btn-simple">結論</a></li>
 			  	</ul>
 			  </li>
+			  -->
 
 			<li><a href="map.html" class="scrolly btn btn-simple">哪裡有在都更蛤</a></li>
+			<!--
 			<li><a href="school.html" class="scrolly btn btn-simple">都市更新小學堂</a></li>
 			<li><a href="aboutus.html" class="scrolly btn btn-simple">關於我們</a></li>
+			-->
            </ul>
         </div>
       </div>
