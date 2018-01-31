@@ -15,3 +15,8 @@ Urban Renewal project, start from 2017
 4. npm run start (啟動 web server, 這部分是 back-end)
 
 FB fan page: https://www.facebook.com/urbanrenewaleye/
+
+
+=================ref================
+建物3d
+http://data.taipei/opendata/datalist/datasetMeta?oid=9b7d78d2-0d73-4b42-9b29-c1640efed0eb
