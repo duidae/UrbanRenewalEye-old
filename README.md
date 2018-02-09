@@ -3,8 +3,11 @@ Urban Renewal project, start from 2017
 台北市都更地圖
 
 [website] https://urban-renewal.herokuapp.com/
+
 [heroku git] https://git.heroku.com/urban-renewal.git
+
 [GitHub] https://github.com/duidae/UrbanRenewalEye.git
+
 [本地執行] (先安裝 node.js)
 1. git clone https://github.com/duidae/UrbanRenewalEye.git
 2. npm install
