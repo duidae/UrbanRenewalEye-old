@@ -29,7 +29,7 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 * [臺北市都市更新處](https://uro.gov.taipei/Default.aspx)
 
-* [聽証,公聽會(公民參與會議資訊)](https://civil.gov.taipei/News.aspx?n=7C396A99A3E34DB8&sms=59AD6E6606F6002F)
+* [聽証,公聽會(公民參與會議資訊), 有json!!!](https://civil.gov.taipei/News.aspx?n=7C396A99A3E34DB8&sms=59AD6E6606F6002F)
 
 * [臺北市自動化3D近似建物模型open data](http://data.taipei/opendata/datalist/datasetMeta?oid=9b7d78d2-0d73-4b42-9b29-c1640efed0eb)
 
