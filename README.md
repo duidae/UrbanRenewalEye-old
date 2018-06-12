@@ -16,7 +16,7 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 * [GitHub](https://github.com/duidae/UrbanRenewalEye)
 
-## I
+## Installation & Running
 
 [本地執行] (先安裝 node.js)
 1. git clone https://github.com/duidae/UrbanRenewalEye.git
