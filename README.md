@@ -27,5 +27,6 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 ## Reference
 
-* [建物3d]（http://data.taipei/opendata/datalist/datasetMeta?oid=9b7d78d2-0d73-4b42-9b29-c1640efed0eb）
-* [臺北市都市更新處]（https://uro.gov.taipei/Default.aspx）
+* [建物3d](http://data.taipei/opendata/datalist/datasetMeta?oid=9b7d78d2-0d73-4b42-9b29-c1640efed0eb)
+
+* [臺北市都市更新處](https://uro.gov.taipei/Default.aspx)
