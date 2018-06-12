@@ -14,7 +14,7 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 *[粉專]: https://www.facebook.com/urbanrenewaleye/
 
-*[GitHub]: https://github.com/duidae/UrbanRenewalEy
+*[GitHub]: https://github.com/duidae/UrbanRenewalEye
 
 ## Environment
 
