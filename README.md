@@ -18,7 +18,7 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 ## Installation & Running
 
-[本地執行] (先安裝 node.js) [Node.js](https://nodejs.org/en/)
+[本地執行] (先安裝 [Node.js](https://nodejs.org/en/))
 1. $ git clone https://github.com/duidae/UrbanRenewalEye.git
 2. $ npm install
 3. $ npm run hotbuild & (放到背景, 只要有修改就會即時編譯更新, 這部分是 front-end) (或 npm run build 只編譯一次)
