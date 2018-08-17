@@ -11997,7 +11997,8 @@ module.exports = {
 			{"title": "整宅公辦都更 斯文里3期可望搶第一", "url": "https://udn.com/news/story/7323/2146606"},
 			{"title": "南機場公辦都更 林欽榮：不再考慮廢校蓋中繼宅", "url": "http://news.ltn.com.tw/news/life/breakingnews/1907235"},
 			{"title": "公宅政策啟動 柯文哲：下一步蘭州斯文里", "url": "http://news.ltn.com.tw/news/life/breakingnews/2000087"},
-			{"title": "蘭州、斯文里公辦都更 市府將列20億預算直接蓋", "url": "http://news.ltn.com.tw/news/life/breakingnews/1779781"}
+			{"title": "蘭州、斯文里公辦都更 市府將列20億預算直接蓋", "url": "http://news.ltn.com.tw/news/life/breakingnews/1779781"},
+			{"title": "政府首次當實施者 斯文里公辦都更今開拆", "url": "http://news.ltn.com.tw/news/politics/breakingnews/2429881"}
 		],
 		"summary": "本更新地區位於大同區昌吉街 61 巷 9 弄及昌吉街北側、昌吉街61 巷東側、重慶北路三段 113 巷及大龍街 91 巷南側、承德路三段 108巷 28 弄及 8 公尺未開闢未徵收之計畫道路西側所圍街廓範圍內。其中蘭州國宅座落於昌吉街 61 巷 9 弄、昌吉街 61 巷、重慶北路三段113 巷及大龍街所圍土地；斯文里一、二、三期整建住宅座落於昌吉街、大龍街、大龍街 85 巷、大龍街 91 巷、承德路三段 108 巷 28 弄及 8 公尺未開闢未徵收之計畫道路所圍土地。",
 		"area": "21,236.38 平方公尺"
