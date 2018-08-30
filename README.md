@@ -37,3 +37,5 @@ Jason Hsu: [@duidae](https://github.com/duidae)
 
 * [空屋地圖](https://buzzorange.com/2016/09/13/ko-p-talking-about-living-justic/) 使用量低於 60 度以下的用戶才會被標記為空屋
 
+* [臺北市公劃都市更新地區作業專區](https://uro.gov.taipei/cp.aspx?n=55CFF3E05C99BE04)
+
